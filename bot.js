@@ -22,7 +22,11 @@ function postMessage() {
   var botResponse, options, body, botReq;
 
   botResponse = cool();
-
+    BK Info = 'Aegis Nova Brooklyn Hybrid FAQ: \n' +
+    'https://docs.google.com/document/d/1DvCNjGsO081kgDAP6HI56k_qLCyWdSAaq4nm3ydeenM/edit#/ \n\n' +
+    'Telgeram Download: \n' +
+    'https://telegram.me/RocksBot \n\n' +
+    
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -31,7 +35,7 @@ function postMessage() {
 
   body = {
     "bot_id" : botID,
-    "text" : botResponse
+    "text" : cocInfo
   };
 
   console.log('sending ' + botResponse + ' to ' + botID);
