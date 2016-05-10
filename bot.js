@@ -5,8 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-
-      botRegex = /(!helper)|(!tutor)|(!guides)|(!teach them)|(![bB]bomber)/;
+      botRegex = /^\!bomber/;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -23,11 +22,7 @@ function postMessage() {
   var botResponse, options, body, botReq;
 
   botResponse = cool();
-  BK Info = 'Aegis Nova Brooklyn Hybrid FAQ: \n' +
-    'https://docs.google.com/document/d/1DvCNjGsO081kgDAP6HI56k_qLCyWdSAaq4nm3ydeenM/edit#/ \n\n' +
-    'Telgeram Download: \n' +
-    'https://telegram.me/RocksBot \n\n' +
-    
+
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -36,7 +31,7 @@ function postMessage() {
 
   body = {
     "bot_id" : botID,
-    "text" : cocInfo
+    "text" : botResponse
   };
 
   console.log('sending ' + botResponse + ' to ' + botID);
@@ -60,3 +55,5 @@ function postMessage() {
 
 
 exports.respond = respond;
+Status API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Contact Help
