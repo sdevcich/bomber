@@ -5,9 +5,8 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
- 
       botRegex = /^\/!bomber/;
-      
+
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage();
@@ -23,10 +22,7 @@ function postMessage() {
   var botResponse, options, body, botReq;
 
   botResponse = cool();
-    BK Info = 'Aegis Nova Brooklyn Hybrid FAQ: \n' +
-    'Telgeram Download: \n' +
-    'https://telegram.me/RocksBot \n\n' +
-    
+
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -35,7 +31,7 @@ function postMessage() {
 
   body = {
     "bot_id" : botID,
-    "text" : BK Info
+    "text" : botResponse
   };
 
   console.log('sending ' + botResponse + ' to ' + botID);
