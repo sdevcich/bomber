@@ -42,11 +42,6 @@ function postMessage() {
     'http://cocland.com/strategies/dragon-attack-strategy-infographic \n\n' +
     'BattleFrogs Strategy Guide Database \n' + 
     'https://goo.gl/fGfBLA';
-    
-  options = {
-    hostname: 'api.groupme.com',
-    path: '/v3/bots/post',
-    method: 'POST'
   };
 
   body = {
