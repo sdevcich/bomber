@@ -22,7 +22,27 @@ function postMessage() {
   var botResponse, options, body, botReq;
 
   botResponse = cool();
-
+  cocInfo = 'TownHall Upgrade Priority Guide (upgrade wisely): \n' +
+    'http://www.clashofclansguidehq.com/th3-upgrade-order/ \n' +
+    'http://www.clashofclansguidehq.com/th4-upgrade-order/ \n' +
+    'http://www.clashofclansguidehq.com/th5-upgrade-order/ \n' +
+    'http://www.clashofclansguidehq.com/th6-upgrade-order/ \n' +
+    'http://www.clashofclansguidehq.com/th7-upgrade-order/ \n' +
+    'http://www.clashofclansguidehq.com/th8-upgrade-order/ \n' +
+    'http://www.clashofclansguidehq.com/th9-upgrade-order/ \n\n' +
+    'Clash of Clans Forecasting Site to farm at the right times: \n' +
+    'http://www.clashofclansforecaster.com \n\n' +
+    'Farming Strategy: Milking: \n' +
+    'http://cocland.com/strategies/milking-farming-strategy \n\n' + 
+    'Best League and Army Composition to Farm: \n' + 
+    'http://cocland.com/guides/choosing-the-best-league-and-farming-composition \n\n' +
+    'Balloons - Strategy: \n' +
+    'http://cocland.com/troops/balloons \n\n' +
+    'Dragons - Strategy Infographic: \n' + 
+    'http://cocland.com/strategies/dragon-attack-strategy-infographic \n\n' +
+    'BattleFrogs Strategy Guide Database \n' + 
+    'https://goo.gl/fGfBLA';
+    
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -31,27 +51,5 @@ function postMessage() {
 
   body = {
     "bot_id" : botID,
-    "text" : botResponse
+    "text" : cocInfo
   };
-
-  console.log('sending ' + botResponse + ' to ' + botID);
-
-  botReq = HTTPS.request(options, function(res) {
-      if(res.statusCode == 202) {
-        //neat
-      } else {
-        console.log('rejecting bad status code ' + res.statusCode);
-      }
-  });
-
-  botReq.on('error', function(err) {
-    console.log('error posting message '  + JSON.stringify(err));
-  });
-  botReq.on('timeout', function(err) {
-    console.log('timeout posting message '  + JSON.stringify(err));
-  });
-  botReq.end(JSON.stringify(body));
-}
-
-
-exports.respond = respond;
